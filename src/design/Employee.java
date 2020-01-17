@@ -7,6 +7,10 @@ public interface Employee {
 	*/
 	//please read the following method and understand the business requirements of these following methods
 	//and then implement these in a concrete class.
+
+
+
+
 	
 	//employeeId() will return employee id.
 	public int employeeId();
@@ -22,5 +26,14 @@ public interface Employee {
 	
 	//employee benefit
 	public void benefitLayout();
+
+
+	// Adding more methods
+
+	//employee pension
+	public void employeePension();
+
+	//employee vacation
+	public int empVacation();
 
 }

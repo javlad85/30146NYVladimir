@@ -3,6 +3,71 @@ package design;
 import java.util.Scanner;
 
 public class EmployeeInfo {
+
+	private int id;
+	private String firstName;
+	private String lastName;
+	private int dateOfBirth;
+	private double salary;
+	private int dateOfJoinCompany;
+
+	public  EmployeeInfo(){}
+
+
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public int getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(int dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
+	public double getSalary() {
+		return salary;
+	}
+
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+
+	public int getDateOfJoinCompany() {
+		return dateOfJoinCompany;
+	}
+
+	public void setDateOfJoinCompany(int dateOfJoinCompany) {
+		this.dateOfJoinCompany = dateOfJoinCompany;
+	}
+
+
+
+
+
+
 	
  /*This class can be implemented from Employee interface then add additional methods in EmployeeInfo class.
  * Also, Employee interface can be implemented into an abstract class.So create an Abstract class
