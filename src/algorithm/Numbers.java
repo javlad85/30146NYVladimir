@@ -42,7 +42,30 @@ public class Numbers {
 
 		//By following above, Continue for rest of the Sorting Algorithm....
 
+		//Bubble sort
 
+		algo.bubbleSort(num);
+		long bubbleSortExecutionTime= algo.executionTime();
+		System.out.println("The total execution time is"+ num.length + "numbers take"+ bubbleSortExecutionTime + "milli seconds");
+
+
+		//Quick Sort
+
+		randomize (num, n);
+		algo.quickSort(num, 0, n-1);
+		long quickSortExecutionTime = algo.executionTime;
+
+		System.out.println("The total execution time is" + num.length + "numbers take:" + quickSortExecutionTime + "milli seconds");
+
+
+
+
+
+
+		//Bucket Sort
+
+		randomize (num, 1000000);
+		System.out.println("The total execution time is" + num.length + "numbers take:" + algo.executionTime + "milli seconds");
 
 
 

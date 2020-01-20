@@ -24,6 +24,31 @@ public class UnitTestSorting {
         //Now implement Unit test for rest of the soring algorithm...................below
 
 
+        // bucket sort
+        sort.bubbleSort(unSortedArray);
+        try{
+            Assert.assertEquals(sortedArray, unSortedArray, "unsorted");
+        }catch (Exception ex){
+            ex.getMessage();
+        }
+
+
+        // shell sort
+        sort.shellSort(unSortedArray);
+        try{
+            Assert.assertEquals(sortedArray, unSortedArray, "unsorted");
+        }catch (Exception ex){
+            ex.getMessage();
+        }
+
+        //bubble sort
+        unSortedArray = new int[]{6,9,2,5,1,0,4};
+        sort.bubbleSort(unSortedArray);
+        try {
+            Assert.assertEquals(sortedArray, unSortedArray, "unsorted");
+        }catch(Exception ex){
+            ex.getMessage();
+        }
 
 
 

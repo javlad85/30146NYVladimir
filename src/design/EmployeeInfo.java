@@ -8,11 +8,52 @@ public class EmployeeInfo {
 	private String firstName;
 	private String lastName;
 	private int dateOfBirth;
+	private String position;
 	private double salary;
 	private int dateOfJoinCompany;
 
+
+
+
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
+	}
+
+	public static String getCompanyName() {
+		return companyName;
+	}
+
+	public static void setCompanyName(String companyName) {
+		EmployeeInfo.companyName = companyName;
+	}
+
+
+
+
 	public  EmployeeInfo(){}
 
+	public EmployeeInfo(int id, String firstName, String lastName){
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
+	public EmployeeInfo(int id, String firstName, String lastName,int dateOfBirth, String position, double salary, int dateOfJoinCompany){
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.dateOfBirth = dateOfBirth;
+		this.position = position;
+		this.salary = salary;
+		this.dateOfJoinCompany = dateOfJoinCompany;
+
+
+
+	}
 
 
 	public int getId() {
@@ -98,10 +139,12 @@ public class EmployeeInfo {
 	 * Must implement below constructor.
 	 */
 	public EmployeeInfo(int employeeId){
+
+
 		
 	}
     public EmployeeInfo(String name, int employeeId){
-		
+
 	}
 	
 	/*
@@ -116,6 +159,31 @@ public class EmployeeInfo {
 		int total=0;
 		return total;
 	}
+
+	public static double calculateBonus(){
+		double bonus=0;
+		double salary =0;
+
+		if(salary==0){
+			System.out.println("The salary must be higher than $500 ");
+		}else if ((salary > 0) && (salary <= 500)){
+			bonus =  (salary * 7/100);
+			System.out.println("The employee bonus is " + bonus);
+		}
+		else if(salary >2000 ){
+			bonus = salary*5.5/100;
+			System.out.println("The employee bonus is " + bonus);
+		}
+		else if(salary>4000){
+			bonus = salary*4/100;
+			System.out.println("The employee bonus is " + bonus);
+		}
+
+
+
+		return bonus;
+	}
+
 	
 	/*
 	 * This methods should calculate Employee Pension based on salary and numbers of years with the company.
@@ -123,7 +191,10 @@ public class EmployeeInfo {
 	 * Hints: pension will be 5% of the salary for 1 year, 10% for 2 years with the company and so on.
 	 * 
 	 */
-	public static int calculateEmployeePension(){
+	public static double calculateEmployeePension(){
+		int empTotalYears =0;
+		double yearSalary= 0;
+		double pension =0;
 		int total=0;
 		Scanner sc  = new Scanner(System.in);
 		System.out.println("Please enter start date in format (example: May,2015): ");
@@ -136,10 +207,21 @@ public class EmployeeInfo {
         //implement numbers of year from above two dates
 		//Calculate pension
 
+		//Calculating pension for employee more than 10 years with the company
+			if(empTotalYears >= 1) {
+				pension = yearSalary * 0.05 / 100;
+				System.out.println("pension is" +pension);
+			}
+			else if(empTotalYears >+ 2){
+				pension = yearSalary * 0.1 /100;
+				System.out.println("pension is" +pension);
+			}
 
 
-		return total;
+		return  pension;
 	}
+
+
 	private static class DateConversion {
 
 		public DateConversion(Months months){}
