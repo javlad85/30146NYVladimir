@@ -216,4 +216,10 @@ public class ConnectToSqlDB {
             System.out.println(user.getStName() + " " + user.getStID()+ " " + user.getStDOB());
         }
     }
+
+
+    //??????????????
+    public List<String> readDataBase(String tbl_lowestNumber, String column_lowestNumber) {
+        return null;
+    }
 }

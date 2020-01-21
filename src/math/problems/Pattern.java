@@ -8,11 +8,29 @@ public class Pattern {
 		 *
 		 *
 		 */
-		
-		int numbers = 100;
-		for(int i = 100; i >= 1; i-- ){
-			System.out.println(i);
+
+		for (int i = 100; i >= 1; i--) {
+			if (i >= 90) {
+				System.out.print(i + ",");
+			} else {
+				if ((i >= 70) && (i <= 80)) {
+					for (i = 80; i >= 70; i -= 2) {
+						System.out.print(i + ",");
+					}
+					if ((i >= 35) && (i < 70)) {
+						for (i = 70; i > 40; i -= 3) {
+							System.out.print(i + ",");
+
+						}
+						if ((i >= 1) && (i <= 40)) {
+							for (i = 40; i >= 1; i -= 4)
+								System.out.print(i + ",");
+						}
+					}
+				}
+			}
 		}
+
 
 	}
 }

@@ -1,8 +1,14 @@
 package datastructure;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Stack;
+
 public class DataReader {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		/*
 		 * User API to read the below textFile and print to console.
 		 * Use BufferedReader class. 
@@ -18,8 +24,43 @@ public class DataReader {
 		 * Use For Each loop/while loop/Iterator to retrieve data.
 		 */
 
-		String textFile = System.getProperty("user.dir") + "/src/data/self-driving-car.txt";
 
+		FileReader fileReader = null;
+		BufferedReader bufferedReader = null;
+
+		String textFile = System.getProperty("user.dir") + "/src/data/self-driving-car";
+
+
+
+		String data = "";
+		try {
+
+			fileReader = new FileReader(textFile);
+			bufferedReader = new BufferedReader(fileReader);
+
+			while ((data = bufferedReader.readLine()) != null) {
+				System.out.println(data);
+			}
+
+		} catch (FileNotFoundException ex) {
+			ex.printStackTrace();
+			System.out.println(" Invalid file name please enter a valid File name");
+		} catch (IOException ex) {
+			ex.printStackTrace();
+			System.out.println("IO error");
+		} finally {
+			bufferedReader.close();
+			fileReader.close();
+
+		}
+		String[] myData = data.split("\\w+");
+		Stack<String> mystack = new Stack<>();
+		for (String s : myData) {
+			mystack.push(s);
+		}
+		for (String s : myData) {
+			System.out.println(s);
+		}
 
 
 	}

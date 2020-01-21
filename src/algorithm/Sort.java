@@ -268,5 +268,10 @@ public void merge(int list[], int l, int m, int r) {
             System.out.println(array[i]);
         }
     }
+
+    public long executionTime() {
+        long list = 0;
+        return list;
+    }
 }
 

@@ -55,6 +55,7 @@ What is the difference between an Interface and Abstract class?
 
 
 Can you make an Object from an Interface and Abstract class ? if not how do you use it ?
+-Nop you cannot. those are incomplete class
 
 
 what is Access Specifier?
@@ -162,7 +163,8 @@ where the byte stream is used to recreate the actual Java object in memory.
 
 
 when to use transient variable in java?
--
+-The Java transient keyword is used on class attributes/variables to indicate that serialization process of such class
+should ignore such variables while creating a persistent byte stream for any instance of that class.
 
 Difference between while and do..while loop?
 -while loop  check condition before iteration of the loop/ the do-while loop
@@ -186,7 +188,9 @@ What is constructor chaining in Java?
 constructor chaining.
 
 The difference between Serial and Parallel Garbage Collector?
--
+-A serial collector is a default copying collector which uses only one GC thread for the GC operation,
+while a parallel collector uses multiple GC threads for the GC operation.
+
 What is JIT stands for?
 -Just in Time. this is a component of the runtime environment that improves
 the performance of java.
@@ -223,10 +227,11 @@ What is Framework?
 
 What are the testing Framework available in java?
 Difference between jUnit and testNG?
--both are testing framework and used for unit Testing just for TesNG few fonctonalities ate added
+-both are testing framework and used for unit Testing just for TesNG few functionalities  added
 
 What are the dependencies for this project?
 what is dependency injection in java?
+we can say Coupling or dependency is the degree to which each program module relies on each one of the other modules.
 
 What is static binding and dynamic binding?
 -static biding uses Type information for biding while Dynamic biding uses Objects

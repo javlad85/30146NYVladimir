@@ -1,13 +1,14 @@
 package datastructure;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.*;
 
 public class UseMap {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		/*
 		 * Demonstrate how to use Map that includes storing and retrieving elements.
 		 * Add List<String> into a Map. Like, Map<String, List<string>> list = new HashMap<String, List<String>>();
@@ -33,7 +34,7 @@ public class UseMap {
 		StatesCities.forEach((k, v) -> System.out.println("key" + k + ", value:" + v));
 
 
-		//Method that loimit the value of the Map
+		//Method that limit the value of the Map
 		if (StatesCities.size()>5){
 			StatesCities.remove(4);
 			System.out.println("One record was removed");
@@ -43,24 +44,37 @@ public class UseMap {
 		// Retrieving info from map
 		StatesCities.forEach((k,v) -> System.out.println("key" + k + ", value:" + v ));
 
-        //Interaction with user
-		/*System.out.println("Enter a State u may know");
-		Scanner sc = new Scanner(System.in);
-		String state = sc.nextLine();
-		System.out.println("your state is :" + state);
+		Iterator<Map.Entry<String, String>> itr = StatesCities.entrySet().iterator();
 
-
-		System.out.println("Enter a city related to this state");
-		Scanner ct = new Scanner(System.in);
-		String city = sc.nextLine();
-		System.out.println("your state is :" + city);
-        */
-
-		//get and store  the value from the user
+		while (itr.hasNext()) {
+			Map.Entry<String, String> entry = itr.next();
+			System.out.println("Key = " + entry.getKey() +
+					", Value = " + entry.getValue());
 
 
 		}
 
+		Connection connection = null;
+		Statement statement = null;
+		String url = "jdbc:mysql://localhost:3306/pnt?serverTimezone=UTC";
+		String user = "root";
+		String password = "Password1";
+
+		try {
+			connection = DriverManager.getConnection(url, user, password);
+			statement = connection.createStatement();
+
+			String query = "select * from states;";
+			statement.execute(query);
+			System.out.println(statement.execute(query));
+
+
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+			System.out.println("Check your connection");
+		} finally {
+			statement.close();
+			connection.close();
+		}
 	}
-
-
+}
